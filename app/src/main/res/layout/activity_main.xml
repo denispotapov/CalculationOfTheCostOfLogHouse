@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.denispotapov.calculationofthecostofloghouse.MainViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="2dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text_size_blockhouse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Размер сруба:"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/editText_length"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text"
+                    android:hint="@string/length"
+                    android:inputType="numberDecimal"
+                    app:double="@={viewmodel.length}" />
+
+                <EditText
+                    android:id="@+id/editText_width"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text"
+                    android:hint="@string/width"
+                    android:inputType="numberDecimal"
+                    app:double="@={viewmodel.width}" />
+
+                <EditText
+                    android:id="@+id/editText_height"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text"
+                    android:hint="@string/height"
+                    android:inputType="numberDecimal"
+                    app:double="@={viewmodel.height}" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text_number_of_doors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Количество дверей:"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/editText_number_of_doors"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:background="@drawable/edit_text"
+                    android:gravity="center"
+                    android:inputType="numberDecimal"
+                    app:double="@={viewmodel.numberOfDoors}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text_doors_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Размер дверей:"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/editText_door_length"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text"
+                    android:hint="@string/length"
+                    android:inputType="numberDecimal"
+                    app:double="@={viewmodel.doorLength}" />
+
+                <EditText
+                    android:id="@+id/editText_door_width"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text"
+                    android:hint="@string/width"
+                    android:inputType="numberDecimal"
+                    app:double="@={viewmodel.doorWidth}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text_number_of_windows"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Количество окон:"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/editText_number_of_windows"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:background="@drawable/edit_text"
+                    android:gravity="center"
+                    android:inputType="numberDecimal"
+                    app:double="@={viewmodel.numberOfWindows}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text_windows_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Размер окон:"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/editText_window_length"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text"
+                    android:hint="@string/length"
+                    android:inputType="numberDecimal"
+                    app:double="@={viewmodel.windowLength}" />
+
+                <EditText
+                    android:id="@+id/editText_windows_width"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text"
+                    android:hint="@string/width"
+                    android:inputType="numberDecimal"
+                    app:double="@={viewmodel.windowWidth}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text_section"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/section"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black" />
+
+                <RadioGroup
+                    android:id="@+id/rg_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_80"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="80" />
+
+                    <RadioButton
+                        android:id="@+id/rb_100"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100" />
+
+                    <RadioButton
+                        android:id="@+id/rb_120"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="120" />
+
+                    <RadioButton
+                        android:id="@+id/rb_140"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="140" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@={viewmodel.check}"
+                android:text="Нужны перегородки" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:orientation="horizontal"
+                app:isGone="@{viewmodel.check}">
+
+                <TextView
+                    android:id="@+id/text_total_length_of_partitions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Общая длина перегородок:"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/editText_total_length_of_partitions"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:background="@drawable/edit_text"
+                    android:gravity="center"
+                    android:hint="@string/meter"
+                    android:inputType="numberDecimal"
+                    app:double="@={viewmodel.totalLengthOfPartitions}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:orientation="horizontal"
+                app:isGone="@{viewmodel.check}">
+
+                <TextView
+                    android:id="@+id/text_partition_height"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Высота перегородки:"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/editText_partition_height"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:background="@drawable/edit_text"
+                    android:gravity="center"
+                    android:hint="@string/meter"
+                    android:inputType="numberDecimal"
+                    app:double="@={viewmodel.partitionHeight}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:orientation="horizontal"
+                app:isGone="@{viewmodel.check}">
+
+                <TextView
+                    android:id="@+id/text_number_of_doors_inside"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Количество дверей:"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/editText_number_of_doors_inside"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:background="@drawable/edit_text"
+                    android:gravity="center"
+                    android:inputType="numberDecimal"
+                    app:double="@={viewmodel.numberOfDoorsPartition}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:orientation="horizontal"
+                app:isGone="@{viewmodel.check}">
+
+                <TextView
+                    android:id="@+id/text_doors_size_inside"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Размер дверей:"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/editText_door_length_inside"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text"
+                    android:hint="@string/length"
+                    android:inputType="numberDecimal"
+                    app:double="@={viewmodel.doorLengthInside}" />
+
+                <EditText
+                    android:id="@+id/editText_door_width_inside"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text"
+                    android:hint="@string/width"
+                    android:inputType="numberDecimal"
+                    app:double="@={viewmodel.doorWidthInside}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:orientation="horizontal"
+                app:isGone="@{viewmodel.check}">
+
+                <TextView
+                    android:id="@+id/text_section_partition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/section"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black" />
+
+                <RadioGroup
+                    android:id="@+id/rg_section_partition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_80_partition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="80" />
+
+                    <RadioButton
+                        android:id="@+id/rb_100_partition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100" />
+
+                    <RadioButton
+                        android:id="@+id/rb_120_partition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="120" />
+
+                    <RadioButton
+                        android:id="@+id/rb_140_partition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="140" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_result_walls"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Расчет стен" />
+
+                <TextView
+                    android:id="@+id/text_result_walls"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@{viewmodel.resultPriceWalls}"
+                    android:textColor="@android:color/black"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/text_amount_wood_walls"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@{viewmodel.resultAmountOfWoodWalls}"
+                    android:textColor="@android:color/black"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/text_walls_weight"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@{viewmodel.resultWallsWeight}"
+                    android:textColor="@android:color/black"
+                    android:textSize="17sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:orientation="horizontal"
+                app:isGone="@{viewmodel.check}">
+
+                <Button
+                    android:id="@+id/button_result_partitions"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Перегородки" />
+
+                <TextView
+                    android:id="@+id/text_result_partitions"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@{viewmodel.resultPricePartitions}"
+                    android:textColor="@android:color/black"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/text_amount_wood_partitions"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@{viewmodel.resultAmountOfWoodPartitions}"
+                    android:textColor="@android:color/black"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/text_partitions_weight"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@{viewmodel.resultPartitionsWeight}"
+                    android:textColor="@android:color/black"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:orientation="horizontal"
+                app:isGone="@{viewmodel.check}">
+
+                <Button
+                    android:id="@+id/button_result_overall"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Общее" />
+
+                <TextView
+                    android:id="@+id/text_result_overall"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/text_result_overall_amount_wood"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/text_result_overall_weight"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</layout>
