@@ -24,16 +24,18 @@ class MainActivity : AppCompatActivity() {
             binding.viewmodel = it
         }
 
-        binding.buttonResultWalls.setOnClickListener {
-            getWallResult()
-        }
+        with(binding) {
+            buttonResultWalls.setOnClickListener {
+                getWallResult()
+            }
 
-        binding.buttonResultPartitions.setOnClickListener {
-            getPartitionsResult()
-        }
+            buttonResultPartitions.setOnClickListener {
+                getPartitionsResult()
+            }
 
-        binding.buttonResultOverall.setOnClickListener {
-            getOverallResult()
+            buttonResultOverall.setOnClickListener {
+                getOverallResult()
+            }
         }
     }
 
@@ -91,33 +93,28 @@ class MainActivity : AppCompatActivity() {
 
     private fun getOverallResult() {
 
-        val symbols = DecimalFormatSymbols.getInstance()
-        symbols.decimalSeparator = '.'
-        val format = DecimalFormat("0.00")
-        format.decimalFormatSymbols = symbols
-
         val priceWalls = binding.textResultWalls.text.toString()
         val pricePartitions = binding.textResultPartitions.text.toString()
 
         if (priceWalls.isNotEmpty() && pricePartitions.isNotEmpty()) {
-            val priceOverall = priceWalls.toDouble() + pricePartitions.toDouble()
-            binding.textResultOverall.text = format.format(priceOverall)
+            val priceOverall = priceWalls.toInt() + pricePartitions.toInt()
+            binding.textResultOverall.text = priceOverall.toString()
         }
 
         val amountWoodWalls = binding.textAmountWoodWalls.text.toString()
         val amountWoodPartitions = binding.textAmountWoodPartitions.text.toString()
 
         if (amountWoodWalls.isNotEmpty() && amountWoodPartitions.isNotEmpty()) {
-            val amountWoodOverall = amountWoodWalls.toDouble() + amountWoodPartitions.toDouble()
-            binding.textResultOverallAmountWood.text = format.format(amountWoodOverall)
+            val amountWoodOverall = amountWoodWalls.toInt() + amountWoodPartitions.toInt()
+            binding.textResultOverallAmountWood.text = amountWoodOverall.toString()
         }
 
         val weightWalls = binding.textWallsWeight.text.toString()
         val weightPartitions = binding.textPartitionsWeight.text.toString()
 
         if (weightWalls.isNotEmpty() && weightPartitions.isNotEmpty()) {
-            val weightWoodOverall = weightWalls.toDouble() + weightPartitions.toDouble()
-            binding.textResultOverallWeight.text = format.format(weightWoodOverall)
+            val weightWoodOverall = weightWalls.toInt() + weightPartitions.toInt()
+            binding.textResultOverallWeight.text = weightWoodOverall.toString()
         }
     }
 }

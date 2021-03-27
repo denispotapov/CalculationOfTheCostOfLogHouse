@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
+import kotlin.math.ceil
 
 class MainViewModel : ViewModel() {
 
@@ -27,7 +28,7 @@ class MainViewModel : ViewModel() {
     val doorLengthInside = MutableLiveData<Double>()
     val doorWidthInside = MutableLiveData<Double>()
 
-    val check = MutableLiveData(false)
+    val checkPartitions = MutableLiveData(false)
 
     private val _resultPriceWalls = MutableLiveData<String>()
     val resultPriceWalls: LiveData<String> = _resultPriceWalls
@@ -46,9 +47,6 @@ class MainViewModel : ViewModel() {
 
     private val _resultPartitionsWeight = MutableLiveData<String>()
     val resultPartitionsWeight: LiveData<String> = _resultPartitionsWeight
-
-    private val symbols = DecimalFormatSymbols.getInstance()
-    private val format = DecimalFormat("0.00")
 
     fun onButtonResultWallsClick(sectionPrice: Int, section: Double, weight: Int) {
         _resultPriceWalls.value = getPriceWalls(sectionPrice, section, weight)
@@ -87,17 +85,14 @@ class MainViewModel : ViewModel() {
             doors = ((numberOfDoors * doorLength * doorWidth) / (4 * section))
         }
 
-        val priceWalls = sectionPrice * (walls - windows - doors)
-        val amountWoodForWalls = (priceWalls / sectionPrice)
+        val priceWalls = sectionPrice * (ceil(walls - windows - doors))
+        val amountWoodForWalls = (ceil(priceWalls / sectionPrice))
         val weightWalls = weightSection * (priceWalls / sectionPrice)
 
-        symbols.decimalSeparator = '.'
-        format.decimalFormatSymbols = symbols
+        _resultAmountOfWoodWalls.value = amountWoodForWalls.toInt().toString()
+        _resultWallsWeight.value = weightWalls.toInt().toString()
 
-        _resultAmountOfWoodWalls.value = format.format(amountWoodForWalls)
-        _resultWallsWeight.value = format.format(weightWalls)
-
-        return format.format(priceWalls)
+        return priceWalls.toInt().toString()
     }
 
     private fun getPricePartitions(sectionPrice: Int, section: Double, weightSection: Int): String {
@@ -119,16 +114,13 @@ class MainViewModel : ViewModel() {
             doors = (numberOfDoorsPartition * doorLengthInside * doorWidthInside) / (4 * section)
         }
 
-        val pricePartitions = sectionPrice * (partitions - doors)
-        val amountWoodForPartitions = (pricePartitions / sectionPrice)
+        val pricePartitions = sectionPrice * (ceil(partitions - doors))
+        val amountWoodForPartitions = (ceil(pricePartitions / sectionPrice))
         val weightPartitions = weightSection * (pricePartitions / sectionPrice)
 
-        symbols.decimalSeparator = '.'
-        format.decimalFormatSymbols = symbols
+        _resultAmountOfWoodPartitions.value = amountWoodForPartitions.toInt().toString()
+        _resultPartitionsWeight.value = weightPartitions.toInt().toString()
 
-        _resultAmountOfWoodPartitions.value = format.format(amountWoodForPartitions)
-        _resultPartitionsWeight.value = format.format(weightPartitions)
-
-        return format.format(pricePartitions)
+        return pricePartitions.toInt().toString()
     }
 }

@@ -259,7 +259,7 @@
                 android:id="@+id/checkBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="@={viewmodel.check}"
+                android:checked="@={viewmodel.checkPartitions}"
                 android:text="Нужны перегородки" />
 
             <LinearLayout
@@ -268,7 +268,7 @@
                 android:layout_marginTop="3dp"
                 android:layout_marginBottom="3dp"
                 android:orientation="horizontal"
-                app:isGone="@{viewmodel.check}">
+                app:isGone="@{viewmodel.checkPartitions}">
 
                 <TextView
                     android:id="@+id/text_total_length_of_partitions"
@@ -297,7 +297,7 @@
                 android:layout_marginTop="3dp"
                 android:layout_marginBottom="3dp"
                 android:orientation="horizontal"
-                app:isGone="@{viewmodel.check}">
+                app:isGone="@{viewmodel.checkPartitions}">
 
                 <TextView
                     android:id="@+id/text_partition_height"
@@ -326,7 +326,7 @@
                 android:layout_marginTop="3dp"
                 android:layout_marginBottom="3dp"
                 android:orientation="horizontal"
-                app:isGone="@{viewmodel.check}">
+                app:isGone="@{viewmodel.checkPartitions}">
 
                 <TextView
                     android:id="@+id/text_number_of_doors_inside"
@@ -354,7 +354,7 @@
                 android:layout_marginTop="3dp"
                 android:layout_marginBottom="3dp"
                 android:orientation="horizontal"
-                app:isGone="@{viewmodel.check}">
+                app:isGone="@{viewmodel.checkPartitions}">
 
                 <TextView
                     android:id="@+id/text_doors_size_inside"
@@ -395,7 +395,7 @@
                 android:layout_marginTop="3dp"
                 android:layout_marginBottom="3dp"
                 android:orientation="horizontal"
-                app:isGone="@{viewmodel.check}">
+                app:isGone="@{viewmodel.checkPartitions}">
 
                 <TextView
                     android:id="@+id/text_section_partition"
@@ -461,6 +461,7 @@
                     android:gravity="center"
                     android:text="@{viewmodel.resultPriceWalls}"
                     android:textColor="@android:color/black"
+                    android:textIsSelectable="true"
                     android:textSize="17sp" />
 
                 <TextView
@@ -473,6 +474,7 @@
                     android:gravity="center"
                     android:text="@{viewmodel.resultAmountOfWoodWalls}"
                     android:textColor="@android:color/black"
+                    android:textIsSelectable="true"
                     android:textSize="17sp" />
 
                 <TextView
@@ -485,6 +487,7 @@
                     android:gravity="center"
                     android:text="@{viewmodel.resultWallsWeight}"
                     android:textColor="@android:color/black"
+                    android:textIsSelectable="true"
                     android:textSize="17sp" />
 
 
@@ -496,7 +499,7 @@
                 android:layout_marginTop="3dp"
                 android:layout_marginBottom="3dp"
                 android:orientation="horizontal"
-                app:isGone="@{viewmodel.check}">
+                app:isGone="@{viewmodel.checkPartitions}">
 
                 <Button
                     android:id="@+id/button_result_partitions"
@@ -515,6 +518,7 @@
                     android:gravity="center"
                     android:text="@{viewmodel.resultPricePartitions}"
                     android:textColor="@android:color/black"
+                    android:textIsSelectable="true"
                     android:textSize="17sp" />
 
                 <TextView
@@ -527,6 +531,7 @@
                     android:gravity="center"
                     android:text="@{viewmodel.resultAmountOfWoodPartitions}"
                     android:textColor="@android:color/black"
+                    android:textIsSelectable="true"
                     android:textSize="17sp" />
 
                 <TextView
@@ -539,6 +544,7 @@
                     android:gravity="center"
                     android:text="@{viewmodel.resultPartitionsWeight}"
                     android:textColor="@android:color/black"
+                    android:textIsSelectable="true"
                     android:textSize="17sp" />
 
             </LinearLayout>
@@ -549,7 +555,7 @@
                 android:layout_marginTop="3dp"
                 android:layout_marginBottom="3dp"
                 android:orientation="horizontal"
-                app:isGone="@{viewmodel.check}">
+                app:isGone="@{viewmodel.checkPartitions}">
 
                 <Button
                     android:id="@+id/button_result_overall"
@@ -567,6 +573,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:textColor="@android:color/black"
+                    android:textIsSelectable="true"
                     android:textSize="17sp" />
 
                 <TextView
@@ -578,6 +585,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:textColor="@android:color/black"
+                    android:textIsSelectable="true"
                     android:textSize="17sp" />
 
                 <TextView
@@ -589,6 +597,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:textColor="@android:color/black"
+                    android:textIsSelectable="true"
                     android:textSize="17sp" />
 
             </LinearLayout>
