@@ -3,8 +3,6 @@ package com.denispotapov.calculationofthecostofloghouse
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import java.text.DecimalFormat
-import java.text.DecimalFormatSymbols
 import kotlin.math.ceil
 
 class MainViewModel : ViewModel() {
@@ -29,6 +27,7 @@ class MainViewModel : ViewModel() {
     val doorWidthInside = MutableLiveData<Double>()
 
     val checkPartitions = MutableLiveData(false)
+    val checkDifferentWindows = MutableLiveData(true)
 
     private val _resultPriceWalls = MutableLiveData<String>()
     val resultPriceWalls: LiveData<String> = _resultPriceWalls

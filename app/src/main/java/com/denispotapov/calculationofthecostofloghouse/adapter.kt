@@ -47,3 +47,12 @@ fun View.bindIsGone(loading: Boolean) {
         View.GONE
     }
 }
+
+@BindingAdapter("app:isGoneDiffWindows")
+fun View.bindIsGoneDiffWindows(loading: Boolean) {
+    visibility = if (loading) {
+        View.GONE
+    } else {
+        View.VISIBLE
+    }
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="horizontal_indent">5dp</dimen>
+    <dimen name="vertical_indent">3dp</dimen>
+    <dimen name="start_dimen">15dp</dimen>
+    <dimen name="left_guideline">60dp</dimen>
+</resources>

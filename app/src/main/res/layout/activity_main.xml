@@ -9,598 +9,947 @@
             type="com.denispotapov.calculationofthecostofloghouse.MainViewModel" />
     </data>
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:paddingStart="@dimen/horizontal_indent"
+        android:paddingTop="@dimen/horizontal_indent"
+        android:paddingEnd="@dimen/horizontal_indent">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="2dp"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/text_size_blockhouse"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="3dp"
-                android:orientation="horizontal">
+                android:text="Размер сруба:"
+                android:textAllCaps="false"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_length"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText_length" />
 
-                <TextView
-                    android:id="@+id/text_size_blockhouse"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Размер сруба:"
-                    android:textAllCaps="false"
-                    android:textColor="@android:color/black" />
-
-                <EditText
-                    android:id="@+id/editText_length"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginEnd="3dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/edit_text"
-                    android:hint="@string/length"
-                    android:inputType="numberDecimal"
-                    app:double="@={viewmodel.length}" />
-
-                <EditText
-                    android:id="@+id/editText_width"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginEnd="3dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/edit_text"
-                    android:hint="@string/width"
-                    android:inputType="numberDecimal"
-                    app:double="@={viewmodel.width}" />
-
-                <EditText
-                    android:id="@+id/editText_height"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginEnd="3dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/edit_text"
-                    android:hint="@string/height"
-                    android:inputType="numberDecimal"
-                    app:double="@={viewmodel.height}" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <EditText
+                android:id="@+id/editText_length"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="3dp"
-                android:orientation="horizontal">
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/length"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.length}"
+                app:layout_constraintStart_toEndOf="@+id/text_size_blockhouse"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/text_number_of_doors"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Количество дверей:"
-                    android:textAllCaps="false"
-                    android:textColor="@android:color/black" />
-
-                <EditText
-                    android:id="@+id/editText_number_of_doors"
-                    android:layout_width="30dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginEnd="3dp"
-                    android:background="@drawable/edit_text"
-                    android:gravity="center"
-                    android:inputType="numberDecimal"
-                    app:double="@={viewmodel.numberOfDoors}" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <EditText
+                android:id="@+id/editText_width"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="3dp"
-                android:orientation="horizontal">
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/width"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.width}"
+                app:layout_constraintStart_toEndOf="@+id/editText_length"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/text_doors_size"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Размер дверей:"
-                    android:textAllCaps="false"
-                    android:textColor="@android:color/black" />
-
-                <EditText
-                    android:id="@+id/editText_door_length"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginEnd="3dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/edit_text"
-                    android:hint="@string/length"
-                    android:inputType="numberDecimal"
-                    app:double="@={viewmodel.doorLength}" />
-
-                <EditText
-                    android:id="@+id/editText_door_width"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginEnd="3dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/edit_text"
-                    android:hint="@string/width"
-                    android:inputType="numberDecimal"
-                    app:double="@={viewmodel.doorWidth}" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <EditText
+                android:id="@+id/editText_height"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="3dp"
-                android:orientation="horizontal">
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/height"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.height}"
+                app:layout_constraintStart_toEndOf="@+id/editText_width"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/text_number_of_windows"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Количество окон:"
-                    android:textAllCaps="false"
-                    android:textColor="@android:color/black" />
-
-                <EditText
-                    android:id="@+id/editText_number_of_windows"
-                    android:layout_width="30dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginEnd="3dp"
-                    android:background="@drawable/edit_text"
-                    android:gravity="center"
-                    android:inputType="numberDecimal"
-                    app:double="@={viewmodel.numberOfWindows}" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/text_number_of_doors"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="3dp"
-                android:orientation="horizontal">
+                android:text="Количество дверей:"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_number_of_doors"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText_number_of_doors" />
 
-                <TextView
-                    android:id="@+id/text_windows_size"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Размер окон:"
-                    android:textAllCaps="false"
-                    android:textColor="@android:color/black" />
-
-                <EditText
-                    android:id="@+id/editText_window_length"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginEnd="3dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/edit_text"
-                    android:hint="@string/length"
-                    android:inputType="numberDecimal"
-                    app:double="@={viewmodel.windowLength}" />
-
-                <EditText
-                    android:id="@+id/editText_windows_width"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginEnd="3dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/edit_text"
-                    android:hint="@string/width"
-                    android:inputType="numberDecimal"
-                    app:double="@={viewmodel.windowWidth}" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <EditText
+                android:id="@+id/editText_number_of_doors"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="3dp"
-                android:orientation="horizontal">
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:gravity="center"
+                android:hint="@string/pieces"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.numberOfDoors}"
+                app:layout_constraintStart_toEndOf="@+id/text_number_of_doors"
+                app:layout_constraintTop_toBottomOf="@+id/editText_length" />
 
-                <TextView
-                    android:id="@+id/text_section"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="@string/section"
-                    android:textAllCaps="false"
-                    android:textColor="@android:color/black" />
+            <TextView
+                android:id="@+id/text_doors_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Размер дверей:"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_door_length"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText_door_length" />
 
-                <RadioGroup
-                    android:id="@+id/rg_section"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+            <EditText
+                android:id="@+id/editText_door_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/length"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.doorLength}"
+                app:layout_constraintStart_toEndOf="@+id/text_doors_size"
+                app:layout_constraintTop_toBottomOf="@+id/editText_number_of_doors" />
 
-                    <RadioButton
-                        android:id="@+id/rb_80"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="80" />
-
-                    <RadioButton
-                        android:id="@+id/rb_100"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="100" />
-
-                    <RadioButton
-                        android:id="@+id/rb_120"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="120" />
-
-                    <RadioButton
-                        android:id="@+id/rb_140"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="140" />
-                </RadioGroup>
-            </LinearLayout>
+            <EditText
+                android:id="@+id/editText_door_width"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/width"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.doorWidth}"
+                app:layout_constraintStart_toEndOf="@+id/editText_door_length"
+                app:layout_constraintTop_toBottomOf="@+id/editText_number_of_doors" />
 
             <CheckBox
-                android:id="@+id/checkBox"
+                android:id="@+id/check_windows_of_same_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@={viewmodel.checkDifferentWindows}"
+                android:text="Окна одного размера"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_doors_size" />
+
+            <TextView
+                android:id="@+id/text_number_of_windows"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Количество окон:"
+                android:textColor="@android:color/black"
+                app:isGone="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_number_of_windows"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText_number_of_windows" />
+
+            <EditText
+                android:id="@+id/editText_number_of_windows"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:background="@drawable/edit_text"
+                android:gravity="center"
+                android:hint="@string/pieces"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.numberOfWindows}"
+                app:isGone="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintStart_toEndOf="@+id/text_number_of_windows"
+                app:layout_constraintTop_toBottomOf="@+id/check_windows_of_same_size" />
+
+
+            <TextView
+                android:id="@+id/text_windows_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Размер окон:"
+                android:textColor="@android:color/black"
+                app:isGone="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_window_length"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText_window_length" />
+
+            <EditText
+                android:id="@+id/editText_window_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/length"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.windowLength}"
+                app:isGone="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintStart_toEndOf="@+id/text_windows_size"
+                app:layout_constraintTop_toBottomOf="@+id/editText_number_of_windows" />
+
+            <EditText
+                android:id="@+id/editText_windows_width"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/width"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.windowWidth}"
+                app:isGone="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintStart_toEndOf="@+id/editText_window_length"
+                app:layout_constraintTop_toBottomOf="@+id/editText_number_of_windows" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/leftAuthGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/left_guideline" />
+
+            <TextView
+                android:id="@+id/text_window1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Окно 1:"
+                android:textColor="@android:color/black"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_window1_length"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText_window1_length" />
+
+            <EditText
+                android:id="@+id/editText_window1_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/length"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.windowLength}"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintStart_toEndOf="@+id/leftAuthGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/editText_window_length" />
+
+            <EditText
+                android:id="@+id/editText_windows1_width"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/width"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.windowWidth}"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintStart_toEndOf="@+id/editText_window1_length"
+                app:layout_constraintTop_toBottomOf="@+id/editText_windows_width" />
+
+            <TextView
+                android:id="@+id/text_window2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Окно 2:"
+                android:textColor="@android:color/black"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_window2_length"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText_window2_length" />
+
+            <EditText
+                android:id="@+id/editText_window2_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/length"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.windowLength}"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintStart_toEndOf="@+id/leftAuthGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/editText_window1_length" />
+
+            <EditText
+                android:id="@+id/editText_windows2_width"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/width"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.windowWidth}"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintStart_toEndOf="@+id/editText_window2_length"
+                app:layout_constraintTop_toBottomOf="@+id/editText_windows1_width" />
+
+            <TextView
+                android:id="@+id/text_window3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Окно 3:"
+                android:textColor="@android:color/black"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_window3_length"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText_window3_length" />
+
+            <EditText
+                android:id="@+id/editText_window3_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/length"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.windowLength}"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintStart_toEndOf="@+id/leftAuthGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/editText_window2_length" />
+
+            <EditText
+                android:id="@+id/editText_windows3_width"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/width"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.windowWidth}"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintStart_toEndOf="@+id/editText_window3_length"
+                app:layout_constraintTop_toBottomOf="@+id/editText_windows2_width" />
+
+            <TextView
+                android:id="@+id/text_window4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Окно 4:"
+                android:textColor="@android:color/black"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_window4_length"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText_window4_length" />
+
+            <EditText
+                android:id="@+id/editText_window4_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/length"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.windowLength}"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintStart_toEndOf="@+id/leftAuthGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/editText_window3_length" />
+
+            <EditText
+                android:id="@+id/editText_windows4_width"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/width"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.windowWidth}"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintStart_toEndOf="@+id/editText_window4_length"
+                app:layout_constraintTop_toBottomOf="@+id/editText_windows3_width" />
+
+            <TextView
+                android:id="@+id/text_window5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Окно 5:"
+                android:textColor="@android:color/black"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_window5_length"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText_window5_length" />
+
+            <EditText
+                android:id="@+id/editText_window5_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/length"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.windowLength}"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintStart_toEndOf="@+id/leftAuthGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/editText_window4_length" />
+
+            <EditText
+                android:id="@+id/editText_windows5_width"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/width"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.windowWidth}"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintStart_toEndOf="@+id/editText_window5_length"
+                app:layout_constraintTop_toBottomOf="@+id/editText_windows4_width" />
+
+            <TextView
+                android:id="@+id/text_window6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Окно 6:"
+                android:textColor="@android:color/black"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_window6_length"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText_window6_length" />
+
+            <EditText
+                android:id="@+id/editText_window6_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/length"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.windowLength}"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintStart_toEndOf="@+id/leftAuthGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/editText_window5_length" />
+
+            <EditText
+                android:id="@+id/editText_windows6_width"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/width"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.windowWidth}"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintStart_toEndOf="@+id/editText_window6_length"
+                app:layout_constraintTop_toBottomOf="@+id/editText_windows5_width" />
+
+            <TextView
+                android:id="@+id/text_window7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Окно 7:"
+                android:textColor="@android:color/black"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_window7_length"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText_window7_length" />
+
+            <EditText
+                android:id="@+id/editText_window7_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/length"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.windowLength}"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintStart_toEndOf="@+id/leftAuthGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/editText_window6_length" />
+
+            <EditText
+                android:id="@+id/editText_windows7_width"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/width"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.windowWidth}"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintStart_toEndOf="@+id/editText_window7_length"
+                app:layout_constraintTop_toBottomOf="@+id/editText_windows6_width" />
+
+            <TextView
+                android:id="@+id/text_window8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Окно 8:"
+                android:textColor="@android:color/black"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_window8_length"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText_window8_length" />
+
+            <EditText
+                android:id="@+id/editText_window8_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/length"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.windowLength}"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintStart_toEndOf="@+id/leftAuthGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/editText_window7_length" />
+
+            <EditText
+                android:id="@+id/editText_windows8_width"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/width"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.windowWidth}"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintStart_toEndOf="@+id/editText_window8_length"
+                app:layout_constraintTop_toBottomOf="@+id/editText_windows7_width" />
+
+            <TextView
+                android:id="@+id/text_window9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Окно 9:"
+                android:textColor="@android:color/black"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_window9_length"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText_window9_length" />
+
+            <EditText
+                android:id="@+id/editText_window9_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/length"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.windowLength}"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintStart_toEndOf="@+id/leftAuthGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/editText_window8_length" />
+
+            <EditText
+                android:id="@+id/editText_windows9_width"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/width"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.windowWidth}"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintStart_toEndOf="@+id/editText_window9_length"
+                app:layout_constraintTop_toBottomOf="@+id/editText_windows8_width" />
+
+            <TextView
+                android:id="@+id/text_window10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Окно 10:"
+                android:textColor="@android:color/black"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_window10_length"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText_window10_length" />
+
+            <EditText
+                android:id="@+id/editText_window10_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/length"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.windowLength}"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintStart_toEndOf="@+id/leftAuthGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/editText_window9_length" />
+
+            <EditText
+                android:id="@+id/editText_windows10_width"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/width"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.windowWidth}"
+                app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
+                app:layout_constraintStart_toEndOf="@+id/editText_window10_length"
+                app:layout_constraintTop_toBottomOf="@+id/editText_windows9_width" />
+
+
+            <TextView
+                android:id="@+id/text_section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/section"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/rg_section"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/rg_section" />
+
+
+            <RadioGroup
+                android:id="@+id/rg_section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toEndOf="@+id/text_section"
+                app:layout_constraintTop_toBottomOf="@+id/editText_window10_length">
+
+                <RadioButton
+                    android:id="@+id/rb_80"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="80" />
+
+                <RadioButton
+                    android:id="@+id/rb_100"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100" />
+
+                <RadioButton
+                    android:id="@+id/rb_120"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="120" />
+
+                <RadioButton
+                    android:id="@+id/rb_140"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="140" />
+            </RadioGroup>
+
+            <CheckBox
+                android:id="@+id/check_need_partitions"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="@={viewmodel.checkPartitions}"
-                android:text="Нужны перегородки" />
+                android:text="Нужны перегородки"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_section" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/text_total_length_of_partitions"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="3dp"
-                android:orientation="horizontal"
-                app:isGone="@{viewmodel.checkPartitions}">
+                android:text="Общая длина перегородок:"
+                android:textColor="@android:color/black"
+                app:isGone="@{viewmodel.checkPartitions}"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_total_length_of_partitions"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText_total_length_of_partitions" />
 
-                <TextView
-                    android:id="@+id/text_total_length_of_partitions"
+            <EditText
+                android:id="@+id/editText_total_length_of_partitions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:background="@drawable/edit_text"
+                android:gravity="center"
+                android:hint="@string/meter"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.totalLengthOfPartitions}"
+                app:isGone="@{viewmodel.checkPartitions}"
+                app:layout_constraintStart_toEndOf="@+id/text_total_length_of_partitions"
+                app:layout_constraintTop_toBottomOf="@+id/check_need_partitions" />
+
+            <TextView
+                android:id="@+id/text_partition_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Высота перегородки:"
+                android:textColor="@android:color/black"
+                app:isGone="@{viewmodel.checkPartitions}"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_partition_height"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText_partition_height" />
+
+            <EditText
+                android:id="@+id/editText_partition_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:gravity="center"
+                android:hint="@string/meter"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.partitionHeight}"
+                app:isGone="@{viewmodel.checkPartitions}"
+                app:layout_constraintStart_toEndOf="@+id/text_partition_height"
+                app:layout_constraintTop_toBottomOf="@+id/editText_total_length_of_partitions" />
+
+            <TextView
+                android:id="@+id/text_number_of_doors_inside"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Количество дверей:"
+                android:textColor="@android:color/black"
+                app:isGone="@{viewmodel.checkPartitions}"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_number_of_doors_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText_number_of_doors_inside" />
+
+            <EditText
+                android:id="@+id/editText_number_of_doors_inside"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:gravity="center"
+                android:hint="@string/pieces"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.numberOfDoorsPartition}"
+                app:isGone="@{viewmodel.checkPartitions}"
+                app:layout_constraintStart_toEndOf="@+id/text_number_of_doors_inside"
+                app:layout_constraintTop_toBottomOf="@+id/editText_partition_height" />
+
+            <TextView
+                android:id="@+id/text_doors_size_inside"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Размер дверей:"
+                android:textColor="@android:color/black"
+                app:isGone="@{viewmodel.checkPartitions}"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_door_length_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText_door_length_inside" />
+
+            <EditText
+                android:id="@+id/editText_door_length_inside"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/length"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.doorLengthInside}"
+                app:isGone="@{viewmodel.checkPartitions}"
+                app:layout_constraintStart_toEndOf="@+id/text_doors_size_inside"
+                app:layout_constraintTop_toBottomOf="@+id/editText_number_of_doors_inside" />
+
+            <EditText
+                android:id="@+id/editText_door_width_inside"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:layout_marginTop="@dimen/vertical_indent"
+                android:background="@drawable/edit_text"
+                android:hint="@string/width"
+                android:inputType="numberDecimal"
+                app:double="@={viewmodel.doorWidthInside}"
+                app:isGone="@{viewmodel.checkPartitions}"
+                app:layout_constraintStart_toEndOf="@+id/editText_door_length_inside"
+                app:layout_constraintTop_toBottomOf="@+id/editText_number_of_doors_inside" />
+
+            <TextView
+                android:id="@+id/text_section_partition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/section"
+                android:textColor="@android:color/black"
+                app:isGone="@{viewmodel.checkPartitions}"
+                app:layout_constraintBottom_toBottomOf="@+id/rg_section_partition"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/rg_section_partition" />
+
+            <RadioGroup
+                android:id="@+id/rg_section_partition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_indent"
+                android:orientation="horizontal"
+                app:isGone="@{viewmodel.checkPartitions}"
+                app:layout_constraintStart_toEndOf="@+id/text_section_partition"
+                app:layout_constraintTop_toBottomOf="@+id/editText_door_width_inside">
+
+                <RadioButton
+                    android:id="@+id/rb_80_partition"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Общая длина перегородок:"
-                    android:textAllCaps="false"
-                    android:textColor="@android:color/black" />
+                    android:text="80" />
 
-                <EditText
-                    android:id="@+id/editText_total_length_of_partitions"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginEnd="3dp"
-                    android:background="@drawable/edit_text"
-                    android:gravity="center"
-                    android:hint="@string/meter"
-                    android:inputType="numberDecimal"
-                    app:double="@={viewmodel.totalLengthOfPartitions}" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="3dp"
-                android:orientation="horizontal"
-                app:isGone="@{viewmodel.checkPartitions}">
-
-                <TextView
-                    android:id="@+id/text_partition_height"
+                <RadioButton
+                    android:id="@+id/rb_100_partition"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Высота перегородки:"
-                    android:textAllCaps="false"
-                    android:textColor="@android:color/black" />
+                    android:text="100" />
 
-                <EditText
-                    android:id="@+id/editText_partition_height"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginEnd="3dp"
-                    android:background="@drawable/edit_text"
-                    android:gravity="center"
-                    android:hint="@string/meter"
-                    android:inputType="numberDecimal"
-                    app:double="@={viewmodel.partitionHeight}" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="3dp"
-                android:orientation="horizontal"
-                app:isGone="@{viewmodel.checkPartitions}">
-
-                <TextView
-                    android:id="@+id/text_number_of_doors_inside"
+                <RadioButton
+                    android:id="@+id/rb_120_partition"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Количество дверей:"
-                    android:textAllCaps="false"
-                    android:textColor="@android:color/black" />
+                    android:text="120" />
 
-                <EditText
-                    android:id="@+id/editText_number_of_doors_inside"
-                    android:layout_width="30dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginEnd="3dp"
-                    android:background="@drawable/edit_text"
-                    android:gravity="center"
-                    android:inputType="numberDecimal"
-                    app:double="@={viewmodel.numberOfDoorsPartition}" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="3dp"
-                android:orientation="horizontal"
-                app:isGone="@{viewmodel.checkPartitions}">
-
-                <TextView
-                    android:id="@+id/text_doors_size_inside"
+                <RadioButton
+                    android:id="@+id/rb_140_partition"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Размер дверей:"
-                    android:textAllCaps="false"
-                    android:textColor="@android:color/black" />
+                    android:text="140" />
+            </RadioGroup>
 
-                <EditText
-                    android:id="@+id/editText_door_length_inside"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginEnd="3dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/edit_text"
-                    android:hint="@string/length"
-                    android:inputType="numberDecimal"
-                    app:double="@={viewmodel.doorLengthInside}" />
-
-                <EditText
-                    android:id="@+id/editText_door_width_inside"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginEnd="3dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/edit_text"
-                    android:hint="@string/width"
-                    android:inputType="numberDecimal"
-                    app:double="@={viewmodel.doorWidthInside}" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/button_result_walls"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="3dp"
-                android:orientation="horizontal"
-                app:isGone="@{viewmodel.checkPartitions}">
+                android:layout_marginTop="12dp"
+                android:text="Расчет стен"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_section_partition" />
 
-                <TextView
-                    android:id="@+id/text_section_partition"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="@string/section"
-                    android:textAllCaps="false"
-                    android:textColor="@android:color/black" />
-
-                <RadioGroup
-                    android:id="@+id/rg_section_partition"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/rb_80_partition"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="80" />
-
-                    <RadioButton
-                        android:id="@+id/rb_100_partition"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="100" />
-
-                    <RadioButton
-                        android:id="@+id/rb_120_partition"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="120" />
-
-                    <RadioButton
-                        android:id="@+id/rb_140_partition"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="140" />
-                </RadioGroup>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/text_result_walls"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="3dp"
-                android:orientation="horizontal">
+                android:layout_marginStart="@dimen/start_dimen"
+                android:text="@{viewmodel.resultPriceWalls}"
+                android:textColor="@android:color/black"
+                android:textIsSelectable="true"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="@+id/button_result_walls"
+                app:layout_constraintStart_toEndOf="@+id/button_result_walls"
+                app:layout_constraintTop_toTopOf="@+id/button_result_walls" />
 
-                <Button
-                    android:id="@+id/button_result_walls"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:text="Расчет стен" />
-
-                <TextView
-                    android:id="@+id/text_result_walls"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@{viewmodel.resultPriceWalls}"
-                    android:textColor="@android:color/black"
-                    android:textIsSelectable="true"
-                    android:textSize="17sp" />
-
-                <TextView
-                    android:id="@+id/text_amount_wood_walls"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@{viewmodel.resultAmountOfWoodWalls}"
-                    android:textColor="@android:color/black"
-                    android:textIsSelectable="true"
-                    android:textSize="17sp" />
-
-                <TextView
-                    android:id="@+id/text_walls_weight"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@{viewmodel.resultWallsWeight}"
-                    android:textColor="@android:color/black"
-                    android:textIsSelectable="true"
-                    android:textSize="17sp" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/text_amount_wood_walls"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="3dp"
-                android:orientation="horizontal"
-                app:isGone="@{viewmodel.checkPartitions}">
+                android:layout_marginStart="@dimen/start_dimen"
+                android:text="@{viewmodel.resultAmountOfWoodWalls}"
+                android:textColor="@android:color/black"
+                android:textIsSelectable="true"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="@+id/button_result_walls"
+                app:layout_constraintStart_toEndOf="@+id/text_result_walls"
+                app:layout_constraintTop_toTopOf="@+id/button_result_walls" />
 
-                <Button
-                    android:id="@+id/button_result_partitions"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Перегородки" />
-
-                <TextView
-                    android:id="@+id/text_result_partitions"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@{viewmodel.resultPricePartitions}"
-                    android:textColor="@android:color/black"
-                    android:textIsSelectable="true"
-                    android:textSize="17sp" />
-
-                <TextView
-                    android:id="@+id/text_amount_wood_partitions"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@{viewmodel.resultAmountOfWoodPartitions}"
-                    android:textColor="@android:color/black"
-                    android:textIsSelectable="true"
-                    android:textSize="17sp" />
-
-                <TextView
-                    android:id="@+id/text_partitions_weight"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@{viewmodel.resultPartitionsWeight}"
-                    android:textColor="@android:color/black"
-                    android:textIsSelectable="true"
-                    android:textSize="17sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/text_walls_weight"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="3dp"
-                android:orientation="horizontal"
-                app:isGone="@{viewmodel.checkPartitions}">
+                android:layout_marginStart="@dimen/start_dimen"
+                android:text="@{viewmodel.resultWallsWeight}"
+                android:textColor="@android:color/black"
+                android:textIsSelectable="true"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="@+id/button_result_walls"
+                app:layout_constraintStart_toEndOf="@+id/text_amount_wood_walls"
+                app:layout_constraintTop_toTopOf="@+id/button_result_walls" />
 
-                <Button
-                    android:id="@+id/button_result_overall"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Общее" />
+            <Button
+                android:id="@+id/button_result_partitions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Перегородки"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_result_walls" />
 
-                <TextView
-                    android:id="@+id/text_result_overall"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@android:color/black"
-                    android:textIsSelectable="true"
-                    android:textSize="17sp" />
 
-                <TextView
-                    android:id="@+id/text_result_overall_amount_wood"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@android:color/black"
-                    android:textIsSelectable="true"
-                    android:textSize="17sp" />
+            <TextView
+                android:id="@+id/text_result_partitions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/start_dimen"
+                android:text="@{viewmodel.resultPricePartitions}"
+                android:textColor="@android:color/black"
+                android:textIsSelectable="true"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="@+id/button_result_partitions"
+                app:layout_constraintStart_toEndOf="@+id/button_result_partitions"
+                app:layout_constraintTop_toTopOf="@+id/button_result_partitions" />
 
-                <TextView
-                    android:id="@+id/text_result_overall_weight"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@android:color/black"
-                    android:textIsSelectable="true"
-                    android:textSize="17sp" />
+            <TextView
+                android:id="@+id/text_amount_wood_partitions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/start_dimen"
+                android:text="@{viewmodel.resultAmountOfWoodPartitions}"
+                android:textColor="@android:color/black"
+                android:textIsSelectable="true"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="@+id/button_result_partitions"
+                app:layout_constraintStart_toEndOf="@+id/text_result_partitions"
+                app:layout_constraintTop_toTopOf="@+id/button_result_partitions" />
 
-            </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
+            <TextView
+                android:id="@+id/text_partitions_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/start_dimen"
+                android:text="@{viewmodel.resultPartitionsWeight}"
+                android:textColor="@android:color/black"
+                android:textIsSelectable="true"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="@+id/button_result_partitions"
+                app:layout_constraintStart_toEndOf="@+id/text_amount_wood_partitions"
+                app:layout_constraintTop_toTopOf="@+id/button_result_partitions" />
+
+            <Button
+                android:id="@+id/button_result_overall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Общее"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_result_partitions" />
+
+
+            <TextView
+                android:id="@+id/text_result_overall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/start_dimen"
+                android:textColor="@android:color/black"
+                android:textIsSelectable="true"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="@+id/button_result_overall"
+                app:layout_constraintStart_toEndOf="@+id/button_result_overall"
+                app:layout_constraintTop_toTopOf="@+id/button_result_overall" />
+
+            <TextView
+                android:id="@+id/text_result_overall_amount_wood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/start_dimen"
+                android:textColor="@android:color/black"
+                android:textIsSelectable="true"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="@+id/button_result_overall"
+                app:layout_constraintStart_toEndOf="@+id/text_result_overall"
+                app:layout_constraintTop_toTopOf="@+id/button_result_overall" />
+
+            <TextView
+                android:id="@+id/text_result_overall_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/start_dimen"
+                android:textColor="@android:color/black"
+                android:textIsSelectable="true"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="@+id/button_result_overall"
+                app:layout_constraintStart_toEndOf="@+id/text_result_overall_amount_wood"
+                app:layout_constraintTop_toTopOf="@+id/button_result_overall" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
 </layout>

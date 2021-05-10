@@ -3,7 +3,8 @@
     <string name="length"><font size="14">длина, м</font></string>
     <string name="width"><font size="14">ширина, м</font></string>
     <string name="height"><font size="14">высота, м</font></string>
-    <string name="meter"><font size="14">м</font></string>
+    <string name="meter"><font size="14"> м </font></string>
+    <string name="pieces"><font size="14">шт.</font></string>
     <string name="section">Сечение:</string>
     <string name="calculate">Рассчитать</string>
 </resources>

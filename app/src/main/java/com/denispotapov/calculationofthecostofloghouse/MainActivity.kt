@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.denispotapov.calculationofthecostofloghouse.databinding.ActivityMainBinding
 import com.denispotapov.calculationofthecostofloghouse.util.*
-import java.text.DecimalFormat
-import java.text.DecimalFormatSymbols
 
 class MainActivity : AppCompatActivity() {
 
