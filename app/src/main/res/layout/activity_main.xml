@@ -228,7 +228,7 @@
                 android:background="@drawable/edit_text"
                 android:hint="@string/length"
                 android:inputType="numberDecimal"
-                app:double="@={viewmodel.windowLength}"
+                app:double="@={viewmodel.window1Length}"
                 app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
                 app:layout_constraintStart_toEndOf="@+id/leftAuthGuideline"
                 app:layout_constraintTop_toBottomOf="@+id/editText_window_length" />
@@ -242,7 +242,7 @@
                 android:background="@drawable/edit_text"
                 android:hint="@string/width"
                 android:inputType="numberDecimal"
-                app:double="@={viewmodel.windowWidth}"
+                app:double="@={viewmodel.window1Width}"
                 app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
                 app:layout_constraintStart_toEndOf="@+id/editText_window1_length"
                 app:layout_constraintTop_toBottomOf="@+id/editText_windows_width" />
@@ -266,7 +266,7 @@
                 android:background="@drawable/edit_text"
                 android:hint="@string/length"
                 android:inputType="numberDecimal"
-                app:double="@={viewmodel.windowLength}"
+                app:double="@={viewmodel.window2Length}"
                 app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
                 app:layout_constraintStart_toEndOf="@+id/leftAuthGuideline"
                 app:layout_constraintTop_toBottomOf="@+id/editText_window1_length" />
@@ -280,7 +280,7 @@
                 android:background="@drawable/edit_text"
                 android:hint="@string/width"
                 android:inputType="numberDecimal"
-                app:double="@={viewmodel.windowWidth}"
+                app:double="@={viewmodel.window2Width}"
                 app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
                 app:layout_constraintStart_toEndOf="@+id/editText_window2_length"
                 app:layout_constraintTop_toBottomOf="@+id/editText_windows1_width" />
@@ -304,7 +304,7 @@
                 android:background="@drawable/edit_text"
                 android:hint="@string/length"
                 android:inputType="numberDecimal"
-                app:double="@={viewmodel.windowLength}"
+                app:double="@={viewmodel.window3Length}"
                 app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
                 app:layout_constraintStart_toEndOf="@+id/leftAuthGuideline"
                 app:layout_constraintTop_toBottomOf="@+id/editText_window2_length" />
@@ -318,7 +318,7 @@
                 android:background="@drawable/edit_text"
                 android:hint="@string/width"
                 android:inputType="numberDecimal"
-                app:double="@={viewmodel.windowWidth}"
+                app:double="@={viewmodel.window3Width}"
                 app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
                 app:layout_constraintStart_toEndOf="@+id/editText_window3_length"
                 app:layout_constraintTop_toBottomOf="@+id/editText_windows2_width" />
@@ -342,7 +342,7 @@
                 android:background="@drawable/edit_text"
                 android:hint="@string/length"
                 android:inputType="numberDecimal"
-                app:double="@={viewmodel.windowLength}"
+                app:double="@={viewmodel.window4Length}"
                 app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
                 app:layout_constraintStart_toEndOf="@+id/leftAuthGuideline"
                 app:layout_constraintTop_toBottomOf="@+id/editText_window3_length" />
@@ -356,7 +356,7 @@
                 android:background="@drawable/edit_text"
                 android:hint="@string/width"
                 android:inputType="numberDecimal"
-                app:double="@={viewmodel.windowWidth}"
+                app:double="@={viewmodel.window4Width}"
                 app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
                 app:layout_constraintStart_toEndOf="@+id/editText_window4_length"
                 app:layout_constraintTop_toBottomOf="@+id/editText_windows3_width" />
@@ -380,7 +380,7 @@
                 android:background="@drawable/edit_text"
                 android:hint="@string/length"
                 android:inputType="numberDecimal"
-                app:double="@={viewmodel.windowLength}"
+                app:double="@={viewmodel.window5Length}"
                 app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
                 app:layout_constraintStart_toEndOf="@+id/leftAuthGuideline"
                 app:layout_constraintTop_toBottomOf="@+id/editText_window4_length" />
@@ -394,7 +394,7 @@
                 android:background="@drawable/edit_text"
                 android:hint="@string/width"
                 android:inputType="numberDecimal"
-                app:double="@={viewmodel.windowWidth}"
+                app:double="@={viewmodel.window5Width}"
                 app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
                 app:layout_constraintStart_toEndOf="@+id/editText_window5_length"
                 app:layout_constraintTop_toBottomOf="@+id/editText_windows4_width" />
@@ -418,7 +418,7 @@
                 android:background="@drawable/edit_text"
                 android:hint="@string/length"
                 android:inputType="numberDecimal"
-                app:double="@={viewmodel.windowLength}"
+                app:double="@={viewmodel.window6Length}"
                 app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
                 app:layout_constraintStart_toEndOf="@+id/leftAuthGuideline"
                 app:layout_constraintTop_toBottomOf="@+id/editText_window5_length" />
@@ -432,7 +432,7 @@
                 android:background="@drawable/edit_text"
                 android:hint="@string/width"
                 android:inputType="numberDecimal"
-                app:double="@={viewmodel.windowWidth}"
+                app:double="@={viewmodel.window6Width}"
                 app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
                 app:layout_constraintStart_toEndOf="@+id/editText_window6_length"
                 app:layout_constraintTop_toBottomOf="@+id/editText_windows5_width" />
@@ -456,7 +456,7 @@
                 android:background="@drawable/edit_text"
                 android:hint="@string/length"
                 android:inputType="numberDecimal"
-                app:double="@={viewmodel.windowLength}"
+                app:double="@={viewmodel.window7Length}"
                 app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
                 app:layout_constraintStart_toEndOf="@+id/leftAuthGuideline"
                 app:layout_constraintTop_toBottomOf="@+id/editText_window6_length" />
@@ -470,7 +470,7 @@
                 android:background="@drawable/edit_text"
                 android:hint="@string/width"
                 android:inputType="numberDecimal"
-                app:double="@={viewmodel.windowWidth}"
+                app:double="@={viewmodel.window7Width}"
                 app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
                 app:layout_constraintStart_toEndOf="@+id/editText_window7_length"
                 app:layout_constraintTop_toBottomOf="@+id/editText_windows6_width" />
@@ -494,7 +494,7 @@
                 android:background="@drawable/edit_text"
                 android:hint="@string/length"
                 android:inputType="numberDecimal"
-                app:double="@={viewmodel.windowLength}"
+                app:double="@={viewmodel.window8Length}"
                 app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
                 app:layout_constraintStart_toEndOf="@+id/leftAuthGuideline"
                 app:layout_constraintTop_toBottomOf="@+id/editText_window7_length" />
@@ -508,7 +508,7 @@
                 android:background="@drawable/edit_text"
                 android:hint="@string/width"
                 android:inputType="numberDecimal"
-                app:double="@={viewmodel.windowWidth}"
+                app:double="@={viewmodel.window8Width}"
                 app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
                 app:layout_constraintStart_toEndOf="@+id/editText_window8_length"
                 app:layout_constraintTop_toBottomOf="@+id/editText_windows7_width" />
@@ -532,7 +532,7 @@
                 android:background="@drawable/edit_text"
                 android:hint="@string/length"
                 android:inputType="numberDecimal"
-                app:double="@={viewmodel.windowLength}"
+                app:double="@={viewmodel.window9Length}"
                 app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
                 app:layout_constraintStart_toEndOf="@+id/leftAuthGuideline"
                 app:layout_constraintTop_toBottomOf="@+id/editText_window8_length" />
@@ -546,7 +546,7 @@
                 android:background="@drawable/edit_text"
                 android:hint="@string/width"
                 android:inputType="numberDecimal"
-                app:double="@={viewmodel.windowWidth}"
+                app:double="@={viewmodel.window9Width}"
                 app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
                 app:layout_constraintStart_toEndOf="@+id/editText_window9_length"
                 app:layout_constraintTop_toBottomOf="@+id/editText_windows8_width" />
@@ -570,7 +570,7 @@
                 android:background="@drawable/edit_text"
                 android:hint="@string/length"
                 android:inputType="numberDecimal"
-                app:double="@={viewmodel.windowLength}"
+                app:double="@={viewmodel.window10Length}"
                 app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
                 app:layout_constraintStart_toEndOf="@+id/leftAuthGuideline"
                 app:layout_constraintTop_toBottomOf="@+id/editText_window9_length" />
@@ -584,7 +584,7 @@
                 android:background="@drawable/edit_text"
                 android:hint="@string/width"
                 android:inputType="numberDecimal"
-                app:double="@={viewmodel.windowWidth}"
+                app:double="@={viewmodel.window10Width}"
                 app:isGoneDiffWindows="@{viewmodel.checkDifferentWindows}"
                 app:layout_constraintStart_toEndOf="@+id/editText_window10_length"
                 app:layout_constraintTop_toBottomOf="@+id/editText_windows9_width" />
